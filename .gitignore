@@ -1,0 +1,60 @@
+#archivos de configuracion*.ini
+*.cfg
+*.ini
+
+#archivos de log
+*.log
+
+#archivos de base de datos
+*.db
+
+#archivos de cache
+*.cache
+
+__pycache__/
+*.pyc
+.venv/
+env/
+venv/
+.env
+.env.development
+.pytest_cache/
+.coverage
+dist/
+build/
+
+#archivos de imagen
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
+
+# ==============================
+# Dataset / imágenes
+# ==============================
+back/seed_images/
+back/media/
+back/uploads/
+
+# ==============================
+# Modelos grandes
+# ==============================
+back/models/
+*.pt
+*.pth
+
+# ==============================
+# Scripts de carga de datos
+# ==============================
+back/scripts/
+
+# ==============================
+# Logs
+# ==============================
+*.log
+
+# PERMITIR el modelo del ml_service
+
+!ml_service/
+!ml_service/models/
+!ml_service/models/best.pt

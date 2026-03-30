@@ -1,0 +1,43 @@
+import { createRouter, createWebHistory } from "vue-router";
+import LoginPage from "../pages/LoginPage.vue";
+import GamePage from "../pages/GamePage.vue";
+import { useAuthStore } from "../stores/auth";
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    {
+      path: "/login",
+      name: "login",
+      component: LoginPage,
+      meta: { public: true },
+    },
+    { path: "/", name: "home", component: GamePage },
+  ],
+});
+
+router.beforeEach(async (to) => {
+  const auth = useAuthStore();
+
+  await auth.bootstrap();
+
+  
+  if (to.meta.public) {
+    if (auth.isAuthed && to.name === "login") {
+      return { name: "home" };
+    }
+    return true;
+  }
+
+  
+  if (!auth.isAuthed) {
+    return {
+      name: "login",
+      query: { next: to.fullPath },
+    };
+  }
+
+  return true;
+});
+
+export default router;

@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/backend/:path*",
+      "destination": "https://cv2026.onrender.com/:path*"
+    },
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
