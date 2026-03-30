@@ -1,60 +1,62 @@
-#archivos de configuracion*.ini
+# ==============================
+# Config files
+# ==============================
 *.cfg
 *.ini
 
-#archivos de log
-*.log
-
-#archivos de base de datos
-*.db
-
-#archivos de cache
-*.cache
-
+# ==============================
+# Python / virtual environments
+# ==============================
 __pycache__/
 *.pyc
 .venv/
 env/
 venv/
-.env
-.env.development
 .pytest_cache/
 .coverage
+
+# ==============================
+# Environment variables
+# ==============================
+.env
+.env.*
+!.env.example
+
+# ==============================
+# Build artifacts
+# ==============================
 dist/
 build/
 
-#archivos de imagen
-# *.jpg
-# *.jpeg
-# *.png
-# *.gif
+# ==============================
+# Databases / cache / logs
+# ==============================
+*.db
+*.cache
+*.log
 
 # ==============================
-# Dataset / imágenes
+# Dataset / images
 # ==============================
 back/seed_images/
 back/media/
 back/uploads/
 
 # ==============================
-# Modelos grandes
+# Large models
 # ==============================
 back/models/
 *.pt
 *.pth
 
 # ==============================
-# Scripts de carga de datos
+# Data loading scripts
 # ==============================
 back/scripts/
 
 # ==============================
-# Logs
+# Keep the model in ml_service
 # ==============================
-*.log
-
-# PERMITIR el modelo del ml_service
-
 !ml_service/
 !ml_service/models/
 !ml_service/models/best.pt
